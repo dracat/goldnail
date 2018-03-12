@@ -1,0 +1,123 @@
+//- Includes
+include ../elements/_widget-form-search
+include ../elements/_widget-flickrfeed
+
+// Aside
+aside.text-left
+  // Search in Blog
+  div
+    h4.text-bold Search in Blog
+  div.offset-top-10
+    div.hr.bg-gray
+
+  .offset-top-13.offset-md-top-20.rd-search-blog
+    +widget-form-search(null, null, "blog-classic-form-search-widget")
+
+  // Archive
+  div.offset-top-30.offset-md-top-63
+    h4.text-bold Archive
+  div.offset-top-10
+    div.hr.bg-gray
+
+  .offset-top-13.offset-md-top-20
+    .range.range-xs-center
+      .cell-xs-6
+        .inset-xs-left-5
+          // List Marked
+          ul.list.list-marked.list-marked-icon.text-dark
+            li
+              a.text-atlantis(href="#") Jan 2016
+            li
+              a.text-atlantis(href="#") Mar 2016
+            li
+              a.text-atlantis(href="#") May 2016
+            li
+              a.text-atlantis(href="#") Jul 2016
+
+      .cell-xs-6.offset-top-10.offset-xs-top-0.inset-xs-left-5
+        // List Marked
+        ul.list.list-marked.list-marked-icon.text-dark
+          li
+            a.text-atlantis(href="#") Feb 2016
+          li
+            a.text-atlantis(href="#") Apr 2016
+          li
+            a.text-atlantis(href="#") Jun 2016
+
+  // Flickr @fasttravel
+  div.offset-top-30.offset-md-top-63
+    h4.text-bold Flickr @fasttravel
+  div.offset-top-10
+    div.hr.bg-gray
+
+  .offset-top-13.offset-md-top-20
+    +widget-flickrfeed("tm60026blogs", {"data-image_q": "src"}, {
+      "style": "group widget-flickrfeed-lg",
+      "dataSize": "1050x700",
+      "img": {
+        "width": 160,
+        "height": 160
+      }
+    }, 6)
+
+
+  // Categories
+  div.offset-top-30.offset-md-top-63
+    h4.text-bold Categories
+  div.offset-top-10
+    div.hr.bg-gray
+
+  .offset-top-13.offset-md-top-20
+    .inset-xs-left-5
+      // List Marked
+      ul.list.list-marked.list-marked-icon.text-dark
+        li
+          a.text-atlantis(href="#") Articles
+        li
+          a.text-atlantis(href="#") Photos
+        li
+          a.text-atlantis(href="#") Videos
+
+  // Recent Posts
+  div.offset-top-30.offset-md-top-63
+    h4.text-bold Recent Posts
+  div.offset-top-10
+    div.hr.bg-gray
+
+  .offset-top-13.offset-md-top-20
+    .inset-xs-left-5
+      // List Marked
+      ul.list.list-marked.list-marked-icon.text-dark
+        li
+          a.text-atlantis(href= cfg.nav.tipsAndTricks.submenu.singlePost.href) Visiting Paris on a Budget
+        li
+          a.text-atlantis(href= cfg.nav.tipsAndTricks.submenu.singlePost.href) 9 Ways to Become a Successful Travel #[br.veil.reveal-lg-inline-block] Blogger
+        li
+          a.text-atlantis(href= cfg.nav.tipsAndTricks.submenu.singlePost.href) How to Make Travel Videos
+        li
+          a.text-atlantis(href= cfg.nav.tipsAndTricks.submenu.singlePost.href) How These 5 People Found The Path to Their Dream Trip
+
+  .offset-top-63
+    // Facebook standart widget
+    div
+      .fb-root.fb-widget
+        .fb-page-responsive
+          .fb-page(data-href='https://www.facebook.com/TemplateMonster', data-tabs='timeline', data-height='500', data-small-header='false', data-adapt-container-width='true', data-hide-cover='false', data-show-facepile='true')
+            .fb-xfbml-parse-ignore
+              blockquote(cite='https://www.facebook.com/TemplateMonster')
+                a(href='https://www.facebook.com/TemplateMonster') TemplateMonster
+
+  // Tags
+  div.offset-top-30.offset-md-top-63
+    h4.text-bold Tags
+  div.offset-top-10
+    div.hr.bg-gray
+
+  .offset-top-13.offset-md-top-20
+    .tags.group.group-sm.offset-top-23
+      a.btn-tag.btn.btn-orange-peel.btn-orange-peel-transparent(href='#') Travel
+      a.btn-tag.btn.btn-orange-peel.btn-orange-peel-transparent(href= cfg.nav.tipsAndTricks.submenu.blogClassic.href) Blog
+      a.btn-tag.btn.btn-orange-peel.btn-orange-peel-transparent(href='#') Video
+      a.btn-tag.btn.btn-orange-peel.btn-orange-peel-transparent(href= cfg.nav.guides.href) Guide
+      a.btn-tag.btn.btn-orange-peel.btn-orange-peel-transparent(href= cfg.nav.pages.submenu.countryPage.href) France
+      a.btn-tag.btn.btn-orange-peel.btn-orange-peel-transparent(href='#') USA

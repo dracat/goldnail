@@ -1,0 +1,24 @@
+mixin member-block(img, icons, contactInfo, btn)
+  // Member block
+  .member-block
+    img.img-responsive.img-rounded.center-block(src=img.src width="#{img.width}" height="#{img.height}" alt="")
+    .member-block-body.context-light.offset-top-30.text-sm-left
+      a(href= btn.link).btn.btn-block(class= btn.class)= btn.text
+
+      // Contact Info
+      address.contact-info.offset-top-20.offset-sm-top-30
+        ul.list-unstyled
+          each contact in contactInfo
+            li
+              .reveal-inline-block
+                a.unit.unit-middle.unit-horizontal.unit-spacing-xs(class= contact.type === "mail" ? "text-atlantis" : "" || contact.type === "phone" ? "text-darker" : "")(href= contact.type === "mail" ? "mailto:#{contact.link}" : "callto:#{contact.link}")
+                  span.unit-left
+                    span.icon.icon-xxs.icon-warning.icon-circle.mdi.mdi-email-outline.text-white(class= contact.class)
+                  span.unit-body.inset-left-5
+                    span= contact.link
+
+      .offset-top-20
+        ul.list-inline.list-inline-4.reveal-inline-block.inset-left-5
+          each icon in icons
+            li
+              a.icon(class= icon.class)(href='#{icon.link}')

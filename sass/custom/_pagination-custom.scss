@@ -1,0 +1,65 @@
+//
+// Custom Pagination
+// --------------------------------------------------
+
+.pagination-classic {
+  @include list-unstyled();
+  margin-left: -5px;
+  font-size: 0;
+
+  > li {
+    display: inline-block;
+    margin-left: 5px;
+
+    .icon {
+      font-size: 12px;
+    }
+
+    a {
+      padding: 9px 20px;
+      color: $white;
+      background: $brand-primary;
+      box-shadow: none;
+
+      &:hover, &:focus {
+        color: $white;
+        background: $brand-orange-peel;
+      }
+    }
+
+    & + li {
+      margin-left: 7px;
+    }
+
+    &.active, &:first-child {
+      a {
+        pointer-events: none;
+        background: $gray;
+
+        &:hover, &:focus {
+          color: $white;
+          background: $brand-orange-peel;
+        }
+      }
+    }
+
+    &:nth-last-child(2), &:nth-last-child(3) {
+      display: none;
+    }
+
+    > a,
+    > span {
+      @extend .btn;
+      @extend .btn-sm;
+      min-width: $btn-lh-size-small + $padding-small-vertical*2 + $border-width-small*2;
+    }
+  }
+
+  @media (min-width: $screen-xs-min) {
+    li {
+      &:nth-last-child(2), &:nth-last-child(3) {
+        display: inline-block;
+      }
+    }
+  }
+}

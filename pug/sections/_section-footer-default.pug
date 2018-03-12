@@ -1,0 +1,79 @@
+//- Includes
+include ../elements/_widget-post
+include ../elements/_widget-form-subscribe
+include ../elements/_widget-flickrfeed
+
+// Footer Default
+footer.section-relative.section-90.page-footer.bg-ebony-clay.context-dark
+  .shell-wide
+    .range.range-xs-center.range-xl-justify.text-lg-left
+      .cell-xs-8.cell-sm-5.cell-md-4.cell-lg-3.cell-xl-2.cell-sm-push-2
+        h4 Contact Us
+        div.text-subline
+        // Contact Info
+        address.contact-info.text-left.offset-top-20
+          .reveal-inline-block
+            a(href="callto:#").unit.unit-middle.unit-horizontal.unit-spacing-xs
+              span.unit-left
+                span.icon.icon-xxs.icon-warning.icon-circle.mdi.mdi-phone
+              span.unit-body
+                span.text-alto 1-800-1234-567
+
+          .reveal-inline-block
+            a(href="mailto:#").unit.unit-middle.unit-horizontal.unit-spacing-xs.offset-top-18
+              span.unit-left
+                span.icon.icon-xxs.icon-warning.icon-circle.mdi.mdi-email-outline
+              span.unit-body
+                span.text-alto info@demolink.org
+
+          .reveal-inline-block
+            a(href="#").unit.unit-horizontal.unit-spacing-xs.offset-top-18
+              span.unit-left
+                span.icon.icon-xxs.icon-warning.icon-circle.mdi.mdi-map-marker
+              span.unit-body
+                span.text-alto 2130 Fulton Street, San Diego, #[br.veil.reveal-lg-inline-block] CA 94117-1080 USA
+
+      .cell-xs-10.cell-sm-8.cell-md-5.cell-lg-3.cell-xl-3.offset-top-66.offset-lg-top-0.cell-sm-push-3
+        h4 Newsletter
+        div.text-subline
+
+        p.text-alto Enter your email address to get the latest traveling news, special offers and other discount information delivered right to your inbox.
+
+        .offset-top-30
+          +widget-form-subscribe("Enter your e-mail", "form-subscribe-footer")
+
+
+      .cell-xs-8.cell-sm-5.cell-md-4.cell-lg-3.cell-xl-2.offset-top-66.offset-lg-top-0.cell-sm-push-4
+        h4 @fasttravel
+        div.text-subline
+        .offset-top-20
+          +widget-flickrfeed("tm60026", {"data-image_q": "src"}, {
+            "style": "group-sm",
+            "dataSize": "800x800",
+            "img": {
+              "width": 82,
+              "height": 82
+            }
+          }, 6)
+
+      .cell-xs-10.cell-sm-6.cell-md-4.cell-lg-3.cell-xl-2.offset-top-66.offset-sm-top-0
+        // Footer brand
+        .footer-brand
+          a(href=cfg.nav.home.href)
+            | !{cfg.brand.logoInverse}
+
+        ul.list-inline.list-inline-2.reveal-inline-block.offset-top-30
+          li
+            a.icon.icon-xxs.icon-boulder-filled.icon-circle(href="#" class="fa fa-facebook")
+          li
+            a.icon.icon-xxs.icon-boulder-filled.icon-circle(href="#" class="fa fa-twitter")
+          li
+            a.icon.icon-xxs.icon-boulder-filled.icon-circle(href="#" class="fa fa-google-plus")
+          li
+            a.icon.icon-xxs.icon-boulder-filled.icon-circle(href="#" class="fa fa-instagram")
+          li
+            a.icon.icon-xxs.icon-boulder-filled.icon-circle(href="#" class="fa fa-rss")
+
+        p.no-md-wrap.text-dark.offset-xl-top-108
+          | &copy; #[span(id="copyright-year")]. All rights reserved. #[br.veil-xs] #[a(href="privacy.html") Privacy Policy]
+          block footerLink

@@ -1,0 +1,503 @@
+//
+// Sections
+// --------------------------------------------------
+
+.section-relative {
+  position: relative;
+  z-index: 1;
+}
+
+.section-hidden {
+  overflow: hidden;
+}
+
+.section-visible {
+  overflow: visible;
+}
+
+.section-split {
+  @media (min-width: $screen-lg-min) {
+    margin-left: auto;
+    margin-right: 0;
+    width: 50%;
+  }
+}
+
+.section-image-aside {
+  position: relative;
+  &-img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50vw;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+}
+
+.section-image-aside-left {
+  .section-image-aside-img {
+    right: 100%;
+    margin-right: 15px;
+  }
+}
+
+.section-image-aside-right {
+  .section-image-aside-img {
+    left: 100%;
+    margin-left: 15px;
+  }
+}
+
+// Custom section triangles
+// --------------------------------------------------
+
+.section-code {
+  padding: 20px;
+  border-radius: $border-radius-small;
+  box-shadow: inset $shadow-area-xxs;
+  background: $gray-lightest;
+
+  @media (min-width: $screen-sm-min) {
+    padding: 30px;
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+}
+
+.section-navigation {
+  padding: 20px;
+  border-radius: $border-radius-small;
+  box-shadow: inset $shadow-area-xxs;
+  background: $gray-lightest;
+
+  iframe {
+    border: none;
+    //    width: 100%;
+    //    height: 100%;
+  }
+
+  .resizable {
+
+  }
+
+  @media (min-width: $screen-sm-min) {
+    padding: 30px;
+    margin-left: -45px;
+    margin-right: -45px;
+  }
+}
+
+// Custom section triangles
+// --------------------------------------------------
+
+.section-triangle {
+  position: relative;
+  svg {
+    position: absolute;
+    left: 50%;
+    width: 60px;
+    height: 30px;
+    margin-left: -30px;
+  }
+  &-bottom {
+    svg {
+      top: 100%;
+      margin-top: -1px;
+      z-index: 1;
+    }
+  }
+  &-top {
+    svg {
+      top: 0;
+      @include transform(rotate(180deg));
+      z-index: 1;
+    }
+  }
+}
+
+.section-collar {
+  position: relative;
+
+  &, &:before, &:after {
+    background: $white;
+  }
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    margin-top: -1px;
+    height: 30px;
+    width: 60%;
+    z-index: 1;
+  }
+
+  &:before {
+    left: -10%;
+    margin-left: -15px;
+    @include transform(skewX(-45deg))
+  }
+
+  &:after {
+    right: -10%;
+    margin-right: -15px;
+    @include transform(skewX(45deg))
+  }
+}
+
+.slider-menu-position {
+  position: relative;
+  .rd-navbar-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.mock-up-wrapper {
+  position: relative;
+}
+
+.mock-up-desktop-wrapper {
+  margin-bottom: -80px;
+  max-width: 100%;
+}
+
+.mock-up-circle {
+  position: absolute;
+  left: -15%;
+  bottom: 65px;
+}
+
+.mock-up-mobile-wrapper {
+  position: absolute;
+  right: -5%;
+  bottom: -140px;
+  @media (min-width: $screen-md) {
+    right: -15%;
+  }
+}
+
+// One Page Section
+// --------------------------------------------------
+
+.one-page {
+  position: relative;
+
+  // One Page header and footer
+  &-header, &-footer {
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    @include transform(translateX(-50%));
+  }
+
+  &-header {
+    top: 33px;
+  }
+
+  &-footer {
+    bottom: 33px;
+  }
+}
+
+// Full Screen Section
+// --------------------------------------------------
+
+.section-cover {
+  min-height: 100vh;
+}
+
+.section-center-absolute {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+// Graph demonstration section
+// --------------------------------------------------
+.section-graph-demonstration {
+  overflow: auto;
+  > .graph-content { min-width: 500px; }
+
+  @media (min-width: $screen-xs-min) {
+    > .graph-content { min-width: 0; }
+  }
+  .isotope{
+    .row {
+      > [class*="col-"] {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  // Fix "Filterable Column Chart" in chrome
+  #high-line {
+    overflow: hidden;
+
+    svg {
+      margin-top: -2px;
+    }
+  }
+}
+
+
+.section-team-custom-effects {
+  position: relative;
+  .bg-title {
+    font-size: 170px;
+    line-height: 204px;
+    color: $gray-lighter;
+    position: absolute;
+    bottom: 18%;
+    left: 46%;
+    z-index: -2;
+    span {
+      display: block;
+      position: relative;
+      left: 55px;
+    }
+  }
+  .shell-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .slide-content-animate {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .owl-custom-navigation {
+    @media (min-width: $screen-lg) {
+      position: absolute;
+      bottom: 66px;
+      right: 0;
+      z-index: 1;
+      width: 41.66667%;
+    }
+  }
+}
+
+
+// section navbar custom demonstration
+.rd-navbar-iframe-demonstration {
+  box-shadow: inset $shadow-area-xxs;
+  border: 1px solid $gray-light;
+  iframe {
+    width: 100%;
+    border: none;
+    outline: 1px solid transparent;
+    transition: 0.35s height ease;
+    html, body, .page {
+      height: 100%;
+    }
+  }
+  @media (max-width: $screen-lg) {
+    padding: 0;
+    iframe {
+      height: 56px;
+      &.active,
+      &.active.active-panel {
+        height: 570px;
+      }
+      &.active-panel {
+        height: 220px;
+      }
+    }
+  }
+}
+
+// Section canvas bg animation
+.tablet,
+.mobile{
+  #bg-animation {
+    display: none;
+  }
+}
+
+#bg-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0;
+}
+
+
+// Section Spacing
+// --------------------------------------------------
+@media (min-width: $screen-md-min) {
+  .bg-image-md-fullwidth {
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 50vw;
+      height: 100%;
+      background: transparent url(../images/backgrounds/background-05-645x676.png);
+      z-index: -1;
+    }
+
+    &-left {
+      &:before {
+        right: 15px;
+      }
+    }
+
+    &-atlantis {
+      &:before {
+        background-color: $brand-atlantis;
+      }
+    }
+  }
+}
+
+
+// Section Grid Demonstration
+// --------------------------------------------------
+
+.section-grid-demonstration {
+  [class*="col-"] {
+    @media (max-width: $screen-md-min) {
+      h3 {
+        font-size: 16px;
+        line-height: 16px;
+      }
+      p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+      }
+      .bg-lightest {
+        padding: 5px;
+      }
+    }
+    @media (max-width: $screen-xs-min) {
+      .bg-lightest {
+        padding: 0;
+      }
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+}
+
+
+// Section Fullwidth Background
+// --------------------------------------------------
+
+@media (min-width: $screen-md-min) {
+  .section-md-fullwidth-background {
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      width: 50vw;
+      height: 100%;
+      background: $brand-catskill;
+    }
+  }
+}
+
+
+// Section Google Map
+// --------------------------------------------------
+
+.page .section-google-map-wrap {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (max-width: $screen-sm-min - 1) {
+    right: auto;
+    left: auto;
+    width: 100%;
+  }
+  @media (min-width: $screen-sm-min) {
+    position: absolute;
+
+    .section-google-map {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+// Section Fullheight
+// --------------------------------------------------
+
+.element-fullheight {
+  height: 100%;
+}
+
+
+// Section Unbordered
+// --------------------------------------------------
+
+.element-unbordered {
+  border: none;
+}
+
+
+// Section Background Position
+// --------------------------------------------------
+
+.section-sm-background-position-inverse-235 {
+  @media (min-width: $screen-sm-min) {
+    background-position: -235px center;
+  }
+  @media (min-width: $screen-md-min) {
+    background-position: -205px center;
+  }
+  @media (min-width: $screen-lg-min) {
+    background-position: center center;
+  }
+}
+
+
+// Section
+// --------------------------------------------------
+
+.page .section-height-700 {
+  @media (min-width: $screen-lg-min) and (max-height: $screen-md-min - 192) {
+    [class*="section-"] {
+      padding-top: 55px;
+    }
+
+    ul[class*="offset-top-"] {
+      margin-top: 45px;
+    }
+  }
+}
+
+
+// Section Spacing
+// --------------------------------------------------
+
+$insets: (0, 5px, 20px, 30px, 34px, 40px, 50px, 57px, 90px, 100px, 115px, 122px, 128px, 135px, 140px, 165px, 240px);
+
+.page {
+  @include indent-responsive(section, '', (padding-top, padding-bottom), $medias, $insets);
+  @include indent-responsive(section, top, padding-top, $medias, $insets);
+  @include indent-responsive(section, bottom, padding-bottom, $medias, $insets);
+}

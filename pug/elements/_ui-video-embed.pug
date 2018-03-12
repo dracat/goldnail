@@ -1,0 +1,5 @@
+
+mixin video-embed(video)
+  .embed-responsive(class="embed-responsive-#{video.ratio}")
+    iframe.embed-responsive-item(src="#{video.href}?wmode=transparent")
+

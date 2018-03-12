@@ -1,0 +1,68 @@
+// Swiper
+.swiper-container.swiper-slider.context-dark(data-height='' data-min-height='200px' data-slide-effect="fade")
+  .swiper-wrapper
+    .swiper-slide(data-slide-bg='images/backgrounds/background-01-1920x950.jpg')
+    .swiper-slide(data-slide-bg='images/backgrounds/background-02-1920x950.jpg')
+    .swiper-slide(data-slide-bg='images/backgrounds/background-03-1920x950.jpg')
+  .swiper-center-caption
+    .shell-wide
+      .range.range-xs-center.offset-lg-top-350
+        .cell-xs-10.cell-sm-10.cell-md-8.cell-lg-12.cell-xl-8
+          .panel.panel-lg.bg-overlay-ebony-clay.text-lg-left
+            h4.text-bold.text-orange-peel Find Your Tour
+            // Form
+            form.range.range-lg-bottom.offset-top-20
+              .cell-lg-10
+                .group.group-top
+                  .group-item.element-fullwidth
+                    .form-group.text-left
+                      label.form-label.form-label-outside(for="form-filter-location-from") From
+                      .select2-whitout-border
+                        select.form-control(id="form-filter-location-from" name="location-from" data-minimum-results-for-search="Infinity")
+                          option(value="1") New York
+                          option(value="2") Lisbon
+                          option(value="3") Chicago
+                          option(value="4") Berlin
+
+                  .group-item.element-fullwidth
+                    .form-group.text-left
+                      label.form-label.form-label-outside(for="form-filter-location-to") To
+                      .select2-whitout-border
+                        select.form-control(id="form-filter-location-to" name="location-to" data-minimum-results-for-search="Infinity")
+                          option(value="1") Rome
+                          option(value="2") San Francisco
+                          option(value="3") Paris
+                          option(value="4") Los Angeles
+
+                  .group-item.element-fullwidth
+                    .form-group.text-left
+                      label.form-label.form-label-outside(for="form-filter-location-from-date") From
+                      .select2-whitout-border
+                        select.form-control(id="form-filter-location-from-date" name="date-from" data-minimum-results-for-search="Infinity")
+                          option(value="1") 07/02/2016
+                          option(value="2") 14/02/2016
+                          option(value="3") 20/12/2016
+                          option(value="4") 01/12/2016
+
+                  .group-item.element-fullwidth
+                    .form-group.text-left
+                      label.form-label.form-label-outside(for="form-filter-location-to-date") To
+                      .select2-whitout-border
+                        select.form-control(id="form-filter-location-to-date" name="date-to" data-minimum-results-for-search="Infinity")
+                          option(value="1") 17/12/2016
+                          option(value="2") 27/12/2016
+                          option(value="3") 28/12/2016
+                          option(value="4") 15/12/2016
+
+              .cell-lg-2
+                .reveal-block.reveal-lg-inline-block
+                  button(type="button").btn.btn-primary.element-fullwidth(style="max-width: 147px; min-width: 147px; min-height: 50px;") search
+
+
+  // Swiper Pagination
+  .swiper-pagination
+  // Swiper Navigation
+  .swiper-button-prev
+    span.icon.icon-sm.mdi.mdi-arrow-left-bold
+  .swiper-button-next
+    span.icon.icon-sm.mdi.mdi-arrow-right-bold

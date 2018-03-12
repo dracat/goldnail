@@ -1,0 +1,12 @@
+//
+// RD Google Map
+// --------------------------------------------------
+
+.rd-google-map {
+  color: $rd-google-map-color;
+  
+  &__locations{
+    display: none;
+  }
+}
+

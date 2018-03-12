@@ -1,0 +1,34 @@
+//
+// Media Objects custom
+// --------------------------------------------------
+
+.media-right,
+.media > .pull-right {
+  padding-left: 10px;
+}
+
+.media-left,
+.media > .pull-left {
+  padding-right: 10px;
+}
+
+@media (min-width: $screen-xs-min) {
+  .media-right,
+  .media > .pull-right {
+    padding-left: 20px;
+  }
+
+  .media-left,
+  .media > .pull-left {
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: $screen-sm-min - 1) {
+  .media-sm-custom {
+    .media-left, .media-right, .media-body {
+      display: block;
+      width: 100%;
+    }
+  }
+}

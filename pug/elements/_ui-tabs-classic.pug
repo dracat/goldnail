@@ -1,0 +1,9 @@
+//- nameList - array of tabs list
+mixin tabs-classic(nameList, tabsAttr, tabsGroup, tab)
+  // Responsive-tabs
+  .responsive-tabs.responsive-tabs-classic(data-type= tabsAttr class= tabsAttr class= tab)
+    ul.resp-tabs-list.tabs-1.text-center(data-group= tabsGroup || "tabs-group-default", class= tabsGroup || "tabs-group-default")
+      each item in nameList
+        li= item
+    .resp-tabs-container.text-sm-left(data-group= tabsGroup || "tabs-group-default", class= tabsGroup || "tabs-group-default")
+      block

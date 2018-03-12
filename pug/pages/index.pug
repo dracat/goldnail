@@ -1,0 +1,968 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-rd-video
+include ../elements/_ui-post-modern
+include ../elements/_ui-post-modern-classic
+include ../elements/_ui-testimonial-classic
+include ../elements/_ui-testimonials-slider
+include ../elements/_ui-box-member
+include ../elements/_ui-guide-post
+include ../elements/_ui-isotope
+include ../elements/_ui-thumbnail-rayen
+include  ../elements/_widget-form-subscribe
+
+//-Title
+block title
+  title= cfg.brand.name
+
+//- Page
+block page
+
+  // Page Head
+  header.page-head#home
+    //- RD Navbar
+    +rd-navbar-top-panel({
+      "style": "rd-navbar-default rd-navbar-white",
+      "topPanel": true,
+      "active": 1,
+
+      "attr": {
+        "data-lg-auto-height": "true",
+        "data-md-layout": 'rd-navbar-fullwidth',
+        "data-lg-layout": 'rd-navbar-static',
+        "data-lg-stick-up": 'true'
+      }
+    })
+
+    // Swiper
+    .swiper-container.swiper-slider.context-dark(data-height='' data-min-height='200px' data-slide-effect="fade")
+      .swiper-wrapper
+        .swiper-slide(data-slide-bg='images/backgrounds/background-01-1920x950.jpg')
+        .swiper-slide(data-slide-bg='images/backgrounds/background-02-1920x950.jpg')
+        .swiper-slide(data-slide-bg='images/backgrounds/background-03-1920x950.jpg')
+      .swiper-center-caption
+        .shell-wide
+          .range.range-xs-center
+            .cell-sm-10.cell-lg-9
+              div
+                h5.reveal-inline-block.font-default.both-lines.text-italic Welcome to VipTravel
+              div.offset-top-10
+                h1.text-bold Explore the World with Us
+
+              .offset-top-45
+                p Subscribe to our Tours & Traveling  Newsletter
+              .offset-top-5.center-block(style=' max-width: 420px;')
+                +widget-form-subscribe("Enter your e-mail", "form-subscribe-forms")
+
+
+      // Swiper Pagination
+      .swiper-pagination
+      // Swiper Navigation
+      .swiper-button-prev
+        span.icon.icon-sm.mdi.mdi-arrow-left-bold
+      .swiper-button-next
+        span.icon.icon-sm.mdi.mdi-arrow-right-bold
+
+  // Page Contents
+  main.page-content
+
+
+    section.section-90.section-md-0.section-hidden#about
+      .shell-wide
+        .range.range-xs-center.range-md-left
+          .cell-xs-10.cell-md-6.section-image-aside.section-image-aside-right.text-left
+            .section-image-aside-img.veil.reveal-md-block(style="background-image: url(images/pages/services-01-945x519.jpg); background-position: center center;")
+            .section-image-aside-body.section-md-122.inset-sm-right-30.offset-top-63.offset-lg-top-0
+              h2.text-bold.text-uppercase.text-spacing-20.text-ebony-clay.text-center.text-sm-left a few words about us
+              hr.divider.divider-lg.hr-sm-left-0.bg-primary
+
+              p.offset-top-30.offset-md-top-63 We are committed to offering travel services of the highest quality, combining our energy and enthusiasm, with our years of experience. Our greatest satisfaction comes in serving large numbers of satisfied clients who have experienced the joys and inspiration of travel. Ever since our travel agency was established, Fast Travel has concentrated its efforts in producing quality travel, responding to the needs of the times while anticipating the demands of the future.
+
+    include ../sections/_section-skills
+
+    // Services
+    section.section-90.section-md-122.bg-catskill#services
+      .shell-wide
+        h2.text-bold.text-uppercase.text-spacing-20.text-ebony-clay services
+        hr.divider.divider-lg.bg-primary
+
+        .range.range-xs-center.range-md-left.text-sm-left.offset-top-63
+          .cell-sm-6.cell-md-4.cell-lg-3
+            +guide-post({
+              "href": '#',
+              "title": {
+                "text": "Hotel Booking",
+                "style": "h4 text-bold text-atlantis",
+                "offset": "offset-top-4"
+              },
+              "desc": {
+                "type": null
+              },
+              "img": {
+                "src": "images/guides/guide-09-420x280.jpg",
+                "width": 420,
+                "height": 280,
+                "alt": ""
+              }
+            })
+
+          .cell-sm-6.cell-md-4.cell-lg-3.offset-top-30.offset-sm-top-0
+            +guide-post({
+              "href": '#',
+              "title": {
+                "text": "Air Flights",
+                "style": "h4 text-bold text-atlantis",
+                "offset": "offset-top-4"
+              },
+              "desc": {
+                "type": null
+              },
+              "img": {
+                "src": "images/guides/guide-10-420x280.jpg",
+                "width": 420,
+                "height": 280,
+                "alt": ""
+              }
+            })
+
+          .cell-sm-6.cell-md-4.cell-lg-3.offset-top-30.offset-md-top-0
+            +guide-post({
+              "href": '#',
+              "title": {
+                "text": "Car Rentals",
+                "style": "h4 text-bold text-atlantis",
+                "offset": "offset-top-4"
+              },
+              "desc": {
+                "type": null
+              },
+              "img": {
+                "src": "images/guides/guide-11-420x280.jpg",
+                "width": 420,
+                "height": 280,
+                "alt": ""
+              }
+            })
+
+          .cell-sm-6.cell-md-4.cell-lg-3.offset-top-30.offset-lg-top-0
+            +guide-post({
+              "href": '#',
+              "title": {
+                "text": "Travel Guides",
+                "style": "h4 text-bold text-atlantis",
+                "offset": "offset-top-4"
+              },
+              "desc": {
+                "type": null
+              },
+              "img": {
+                "src": "images/guides/guide-12-420x280.jpg",
+                "width": 420,
+                "height": 280,
+                "alt": ""
+              }
+            })
+
+          .cell-sm-6.cell-md-4.cell-lg-3.offset-top-30
+            +guide-post({
+              "href": '#',
+              "title": {
+                "text": "Travel Insurance",
+                "style": "h4 text-bold text-atlantis",
+                "offset": "offset-top-4"
+              },
+              "desc": {
+                "type": null
+              },
+              "img": {
+                "src": "images/guides/guide-13-420x280.jpg",
+                "width": 420,
+                "height": 280,
+                "alt": ""
+              }
+            })
+
+          .cell-sm-6.cell-md-4.cell-lg-3.offset-top-30
+            +guide-post({
+              "href": '#',
+              "title": {
+                "text": "Big Choice of Tours",
+                "style": "h4 text-bold text-atlantis",
+                "offset": "offset-top-4"
+              },
+              "desc": {
+                "type": null
+              },
+              "img": {
+                "src": "images/guides/guide-14-420x280.jpg",
+                "width": 420,
+                "height": 280,
+                "alt": ""
+              }
+            })
+
+    // Why Choose Us
+    section.section-90.section-md-122(style="background: #282e3c url(images/backgrounds/background-04-642x538.png) repeat;")
+      .shell-wide
+        h2.text-uppercase.text-bold.text-white Why Choose Us
+        hr.divider.divider-lg.bg-primary
+        .range.range-xs-center.offset-md-top-95
+          .cell-sm-10.cell-md-8.cell-lg-4
+            // Icon Box
+            .unit.unit-sm.unit-sm-horizontal.text-sm-left
+              .unit-left
+                span.icon.icon-circle.icon-primary-filled.icon-md.mdi.mdi-web(style="font-size: 70px;")
+              .unit-body
+                h4.text-bold.text-bold.text-orange-peel Lots of Available Destinations
+                p.text-gray We offer over 300 different destinations worldwide. 
+          .cell-sm-10.cell-md-8.cell-lg-4.offset-top-66.offset-lg-top-0
+            // Icon Box
+            .unit.unit-sm.unit-sm-horizontal.text-sm-left
+              .unit-left
+                span.icon.icon-circle.icon-primary-filled.icon-md.mdi.mdi-thumb-up(style="font-size: 56px;")
+              .unit-body
+                h4.text-bold.text-bold.text-orange-peel Book with Peace of Mind
+                p.text-gray Your money is only transferred  2 days after check-in
+          .cell-sm-10.cell-md-8.cell-lg-4.offset-top-66.offset-lg-top-0
+            // Icon Box
+            .unit.unit-sm.unit-sm-horizontal.text-sm-left
+              .unit-left
+                span.icon.icon-circle.icon-primary-filled.icon-md.mdi.mdi-phone(style="font-size: 58px;")
+              .unit-body
+                h4.text-bold.text-bold.text-orange-peel We're Always There for You
+                p.text-gray Our customer service is available 24/7
+
+
+    // our team
+    section.section-90.section-md-122#team
+      .shell-wide
+        h2.text-bold.text-uppercase.text-ebony-clay our team
+        hr.divider.divider-lg.bg-primary
+
+        .range.range-xs-center.range-md-left.offset-top-57.text-md-left
+          .cell-xs-8.cell-sm-5.cell-md-4.cell-xl-2
+            +box-member({
+              "img": {
+                "src": "images/users/user-jack-anderson-270x270.jpg",
+                "width": 270,
+                "height": 270,
+                "alt": 270
+              },
+              "title": {
+                "href": '#',
+                "text": "Jack Anderson"
+              },
+              "desc": {
+                "text": "Co-Founder"
+              }
+            })
+              ul.list-inline.list-inline-2.reveal-inline-block.offset-top-10
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-facebook")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-twitter")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-google-plus")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-instagram")
+
+          .cell-xs-8.cell-sm-5.cell-md-4.cell-xl-2.offset-top-40.offset-sm-top-0
+            +box-member({
+              "img": {
+                "src": "images/users/user-randy-mcDonald-270x270.jpg",
+                "width": 270,
+                "height": 270,
+                "alt": 270
+              },
+              "title": {
+                "href": '#',
+                "text": "Randy McDonald"
+              },
+              "desc": {
+                "text": "Travel Advisor"
+              }
+            })
+              ul.list-inline.list-inline-2.reveal-inline-block.offset-top-10
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-facebook")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-twitter")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-google-plus")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-instagram")
+
+          .cell-xs-8.cell-sm-5.cell-md-4.cell-xl-2.offset-top-40.offset-md-top-0
+            +box-member({
+              "img": {
+                "src": "images/users/user-margaret-cunningham-270x270.jpg",
+                "width": 270,
+                "height": 270,
+                "alt": 270
+              },
+              "title": {
+                "href": '#',
+                "text": "Margaret Cunningham"
+              },
+              "desc": {
+                "text": "Honeymoon Specialist"
+              }
+            })
+              ul.list-inline.list-inline-2.reveal-inline-block.offset-top-10
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-facebook")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-twitter")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-google-plus")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-instagram")
+
+          .cell-xs-8.cell-sm-5.cell-md-4.cell-xl-2.offset-top-40.offset-xl-top-0
+            +box-member({
+              "img": {
+                "src": "images/users/user-nicholas-rodriguez-270x270.jpg",
+                "width": 270,
+                "height": 270,
+                "alt": 270
+              },
+              "title": {
+                "href": '#',
+                "text": "Nicholas Rodriguez"
+              },
+              "desc": {
+                "text": "Cruise Specialist"
+              }
+            })
+              ul.list-inline.list-inline-2.reveal-inline-block.offset-top-10
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-facebook")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-twitter")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-google-plus")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-instagram")
+
+          .cell-xs-8.cell-sm-5.cell-md-4.cell-xl-2.offset-top-40.offset-xl-top-0
+            +box-member({
+              "img": {
+                "src": "images/users/user-jason-carlson-270x270.jpg",
+                "width": 270,
+                "height": 270,
+                "alt": 270
+              },
+              "title": {
+                "href": '#',
+                "text": "Jason Carlson"
+              },
+              "desc": {
+                "text": "Cruise Booking Agent"
+              }
+            })
+              ul.list-inline.list-inline-2.reveal-inline-block.offset-top-10
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-facebook")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-twitter")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-google-plus")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-instagram")
+
+          .cell-xs-8.cell-sm-5.cell-md-4.cell-xl-2.offset-top-40.offset-xl-top-0
+            +box-member({
+              "img": {
+                "src": "images/users/user-debra-lucas-270x270.jpg",
+                "width": 270,
+                "height": 270,
+                "alt": 270
+              },
+              "title": {
+                "href": '#',
+                "text": "Debra Lucas"
+              },
+              "desc": {
+                "text": "Travel Agent"
+              }
+            })
+              ul.list-inline.list-inline-2.reveal-inline-block.offset-top-10
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-facebook")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-twitter")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-google-plus")
+                li
+                  a.icon.icon-xxs.icon-boulder-filled.icon-boulder-filled-inverse.icon-circle(href="#" class="fa fa-instagram")
+
+        .offset-top-63
+          a.btn.btn-primary(href='#') view all team  
+
+
+
+
+    // Exclusive Holidays for Any Travelers
+    section.context-dark
+      +rd-video({
+        "src": "video/bg-video",
+        "imageXS": "26",
+        "imageSM": "26",
+        "imageMD": "37",
+        "imageLG": "74",
+        "imageXLG": "100"
+      })
+        .shell-wide.section-90.section-md-240
+          .range.range-xs-center
+            .cell-sm-10.cell-lg-8
+              h1.text-bold Exclusive Holidays for Any Travelers
+              a.btn.btn-orange-peel.offset-top-20.offset-top-40(href='#') get started
+
+    // tips & tricks
+    section.section-90.section-md-122.bg-catskill#tips-and-tricks
+      .shell-wide
+        h2.text-uppercase.text-bold.text-ebony-clay tips & tricks
+        hr.divider.divider-lg.bg-primary
+
+        .range.range-xs-center.text-sm-left
+          .cell-sm-6.cell-lg-4
+            +post-modern-classic({
+              "titleHref": '#',
+              "title": "New York City Travel Guide"
+            },{
+              "metaHref": "#",
+              "metaIcon": "icon icon-xxs mdi mdi-video text-orange-peel",
+              "metaClass": "text-bold",
+              "metaTitle": "Video"
+            },[
+              {"listTitle": "July 2, 2017 at 4:10pm"},
+              {
+                "listHref": '#',
+                "listClass": "text-orange-peel",
+                "listTitle": "Jason Banks"
+              },
+              {
+                "listHref": "#",
+                "listTitle": "2 Comments"
+              }
+            ],{
+              "type": "rd-video-player",
+              "ratio": "16by9",
+              "href": "video/video-for-player",
+              "title": "",
+              "preview": "video/video-for-player.jpg",
+              "classes": "",
+              "muted": "true",
+              "preload": "false"
+            })
+              .offset-top-20
+                p New York is probably the most visited city in the United States. Famous for fashion, nightlife, art, food, and theater, New York is the heart of the world. Every culture is represented here, and there’s always something to do. You can spend a lifetime exploring and never really see it all. NYC is one of the most amazing places in the world (it’s why I call it home), but as a backpacker it can take a big bite out of your budget.
+
+            .offset-top-30
+              +post-modern-classic({
+                "titleHref": '#',
+                "title": "9 Ways to Become a Successful Travel Blogger"
+              },{
+                "metaHref": "#",
+                "metaIcon": "icon icon-xxs icon-extra-small mdi mdi-file-document text-orange-peel",
+                "metaClass": "text-bold",
+                "metaTitle": "Article"
+              },[
+                {"listTitle": "July 2, 2017 at 4:10pm"},
+                {
+                  "listHref": '#',
+                  "listClass": "text-orange-peel",
+                  "listTitle": "Jason Banks"
+                },
+                {
+                  "listHref": "#",
+                  "listTitle": "2 Comments"
+                }
+              ],{
+                "type": "thumbnail",
+                "thumb": {"src": "images/blog/post-11-570x360.jpg", "width": 570, "height": 360, "alt": ""},
+                "target": {"href": '#'}
+              })
+                .offset-top-20
+                  p Travel blogging is a crowded field — and it gets more crowded by the day. And a lot of the advice that people give are actually counterintuitive to your success. It takes a lot of hard work to be successful in this industry. After years of doing this, here are my 9 tips for running a blog that’s successful.
+
+
+          .cell-sm-6.cell-lg-4
+            +post-modern-classic({
+              "titleHref": '#',
+              "title": "Visiting Paris on a Budget"
+            },{
+              "metaHref": "#",
+              "metaIcon": "icon icon-xxs icon-extra-small mdi mdi-file-image text-orange-peel",
+              "metaClass": "text-bold",
+              "metaTitle": "Photos"
+            },[
+              {"listTitle": "July 2, 2017 at 4:10pm"},
+              {
+                "listHref": '#',
+                "listClass": "text-orange-peel",
+                "listTitle": "Mildred Curtis"
+              },
+              {
+                "listHref": "#",
+                "listTitle": "10 Comments"
+              }
+            ],{
+              "type": "thumbnail",
+              "thumb": {"src": "images/blog/post-09-570x400.jpg", "width": 570, "height": 400, "alt": ""},
+              "target": {"href": '#'}
+            })
+              .offset-top-20
+                p Paris is one of my favourite European cities – I usually try and spend a few days out there most years, and was lucky enough to spend an autumn house-sitting there. But even though I had somewhere to stay, Paris is an easy place to spend money – with fantastic restaurants, shops and wine bars on every corner, and the entrance fees to all those world-class museums and attractions which soon start to add up.
+
+            .offset-top-30
+              +post-modern-classic({
+                "titleHref": '#',
+                "title": "How These 5 People Found The Path to Their Dream Trip"
+              },{
+                "metaHref": "#",
+                "metaIcon": "icon icon-xxs icon-extra-small mdi mdi-file-image text-orange-peel",
+                "metaClass": "text-bold",
+                "metaTitle": "Photos"
+              },[
+                {"listTitle": "July 2, 2017 at 4:10pm"},
+                {
+                  "listHref": '#',
+                  "listClass": "text-orange-peel",
+                  "listTitle": "Mildred Curtis"
+                },
+                {
+                  "listHref": "#",
+                  "listTitle": "10 Comments"
+                }
+              ],{
+                "type": "thumbnail",
+                "thumb": {"src": "images/blog/post-12-570x400.jpg", "width": 570, "height": 400, "alt": ""},
+                "target": {"href": '#'}
+              })
+                .offset-top-20
+                  p Last year, I announced a case study program, in which I would work with a cross-section of readers and help them plan and execute their trips. Step-by-step, I walked them through all the stages of travel planning and helped them to create a roadmap toward their dream. Nearly a year later, here are their results.
+
+          .cell-lg-4
+            .range.range-sm-left
+              .cell-sm-6.cell-lg-12
+                +post-modern-classic({
+                  "titleHref": '#',
+                  "title": "How to Make Travel Videos"
+                },{
+                  "metaHref": "#",
+                  "metaIcon": "icon icon-xxs icon-extra-small mdi mdi-file-document text-orange-peel",
+                  "metaClass": "text-bold",
+                  "metaTitle": "Article"
+                },[
+                  {"listTitle": "July 2, 2017 at 4:10pm"},
+                  {
+                    "listHref": '#',
+                    "listClass": "text-orange-peel",
+                    "listTitle": "Christina Vasquez"
+                  },
+                  {
+                    "listHref": "#",
+                    "listTitle": "10 Comments"
+                  }
+                ],{
+                  "type": "thumbnail",
+                  "thumb": {"src": "images/blog/post-10-570x380.jpg", "width": 570, "height": 380, "alt": ""},
+                  "target": {"href": '#'}
+                })
+                  .offset-top-20
+                    p Introducing our new Travel Video Course, taught by experts Sharon Carpenter and Beverly Bennett! They have over 31,000,000 YouTube views, have worked with big brands, tourism boards, and production companies. In this course, you’ll learn how to make amazing travel videos and earn money from them!
+
+              .cell-sm-6.cell-lg-12.offset-lg-top-30
+                +post-modern-classic({
+                  "titleHref": '#',
+                  "title": "The Ultimate Packing List For Female Travelers"
+                },{
+                  "metaHref": "#",
+                  "metaIcon": "icon icon-xxs icon-extra-small mdi mdi-file-document text-orange-peel",
+                  "metaClass": "text-bold",
+                  "metaTitle": "Article"
+                },[
+                  {"listTitle": "July 2, 2017 at 4:10pm"},
+                  {
+                    "listHref": '#',
+                    "listClass": "text-orange-peel",
+                    "listTitle": "Christina Vasquez"
+                  },
+                  {
+                    "listHref": "#",
+                    "listTitle": "10 Comments"
+                  }
+                ],{
+                  "type": "thumbnail",
+                  "thumb": {"src": "images/blog/post-12-570x380.jpg", "width": 570, "height": 380, "alt": ""},
+                  "target": {"href": '#'}
+                })
+                  .offset-top-20
+                    p It can be daunting trying to figure out what to pack for a week, a month, or a year abroad without much — or any — prior experience in the place you want to visit. But fret not: in this post, Kristin Addis shares her packing insights so that you can travel just about anywhere without spending a fortune on gear.
+
+        .offset-top-63
+          a.btn.btn-primary(href='#') view all deals
+
+    // testimonials
+    section.section-90.section-md-122#testimonials
+      .shell-wide
+        h2.text-bold.text-uppercase.text-ebony-clay testimonials
+        hr.divider.divider-lg.bg-primary
+
+        .range.range-xs-center.offset-top-63
+          .cell-xs-10
+            +quote-classic-slide({
+              "items": '1',
+              'mdItems': '2',
+              "nav": 'false',
+              "dots": 'true',
+              "smStagePadding": '5',
+              "xlStagePadding": '0',
+              "margin": '20',
+              "mdMargin": '45',
+              "lgMargin": '60'
+            }, [{
+              "icon": " icon icon-sm fa fa-quote-left",
+              "img": {
+                "src": "images/users/user-amy-garza-70x70.jpg",
+                "width": 70,
+                "height": 70,
+                "alt": ""
+              },
+              "autor": {
+                "href": "#",
+                "title": "Amy Garza",
+                "desc": "Manager, New York"
+              },
+              "q": {
+                "title": "I would just like to say thank you for your prompt and effective service, for your friendly and professional support staff! I will recommend your travel agency to all my friends."
+              }
+            }, {
+              "icon": " icon icon-sm fa fa-quote-left",
+              "img": {
+                "src": "images/users/user-lawrence-reid-70x70.jpg",
+                "width": 70,
+                "height": 70,
+                "alt": ""
+              },
+              "autor": {
+                "href": "#",
+                "title": "Lawrence Reid",
+                "desc": "Teacher, San Diego"
+              },
+              "q": {
+                "title": "Having recently returned from a wonderful cruise, I wanted to thank you for all your help with the booking. Everything went very smoothly and it was great to have such personal service."
+              }
+            }, {
+              "icon": " icon icon-sm fa fa-quote-left",
+              "img": {
+                "src": "images/users/user-samantha-alvarado-70x70.jpg",
+                "width": 70,
+                "height": 70,
+                "alt": ""
+              },
+              "autor": {
+                "href": "#",
+                "title": "Samantha Alvarado",
+                "desc": "Journalist, Chicago"
+              },
+              "q": {
+                "title": "Thank you so very much for your fantastic hard work in organising such a wonderful trip. We thoroughly enjoyed all excursions; hotel was good and flights perfect."
+              },
+
+            }, {
+              "icon": " icon icon-sm fa fa-quote-left",
+              "img": {
+                "src": "images/users/user-amy-garza-70x70.jpg",
+                "width": 70,
+                "height": 70,
+                "alt": ""
+              },
+              "autor": {
+                "href": "#",
+                "title": "Amy Garza",
+                "desc": "Manager, New York"
+              },
+              "q": {
+                "title": "I would just like to say thank you for your prompt and effective service, for your friendly and professional support staff! I will recommend your travel agency to all my friends."
+              }
+            }
+            ])
+
+    section.section-90.section-md-115.bg-catskill#gallery
+      // Classic Horizontal Tabs
+      .shell-wide
+        +isotope(['All', 'gallery 1', 'gallery 2', 'gallery 3'],{
+          "group": "gallery",
+          "layout": "masonry",
+          "alignClass": "isotope-filters-horizontal"
+        }, "isotope-1")
+          .row(data-photo-swipe-gallery="gallery")
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3.isotope-item(data-filter="*")
+              +thumbnail-rayen({
+                "type": "thumbnail",
+                "thumb": {"src": "images/portfolio/portfolio-01-420x630.jpg", "width": 420, "height": 630, "alt": ""},
+                "target": {
+                  "src": "images/portfolio/portfolio-01-1170x780_original.jpg",
+                  "width": 1170,
+                  "height": 780,
+                  "alt": ""
+                }
+              }, "icon-xxs fa-search-plus",{
+                "style": "h4 text-bold offset-top-10 text-white",
+                "desc": "Venice"
+              },"thumbnail-bordered")
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3.isotope-item(data-filter="gallery 3")
+              +thumbnail-rayen({
+                "type": "thumbnail",
+                "thumb": {"src": "images/portfolio/portfolio-02-420x300.jpg", "width": 420, "height": 300, "alt": ""},
+                "target": {
+                  "src": "images/portfolio/portfolio-02-1170x764_original.jpg",
+                  "width": 1170,
+                  "height": 764,
+                  "alt": ""
+                }
+              }, "icon-xxs fa-search-plus",{
+                "style": "h4 text-bold offset-top-10 text-white",
+                "desc": "Antalya"
+              },"thumbnail-bordered")
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3.isotope-item(data-filter="gallery 3")
+              +thumbnail-rayen({
+                "type": "thumbnail",
+                "thumb": {"src": "images/portfolio/portfolio-03-420x300.jpg", "width": 420, "height": 300, "alt": ""},
+                "target": {
+                  "src": "images/portfolio/portfolio-03-1170x780_original.jpg",
+                  "width": 1170,
+                  "height": 780,
+                  "alt": ""
+                }
+              }, "icon-xxs fa-search-plus",{
+                "style": "h4 text-bold offset-top-10 text-white",
+                "desc": "Hurghada"
+              },"thumbnail-bordered")
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3.isotope-item(data-filter="gallery 3")
+              +thumbnail-rayen({
+                "type": "thumbnail",
+                "thumb": {"src": "images/portfolio/portfolio-04-420x300.jpg", "width": 420, "height": 300, "alt": ""},
+                "target": {
+                  "src": "images/portfolio/portfolio-04-1170x780_original.jpg",
+                  "width": 1170,
+                  "height": 780,
+                  "alt": ""
+                }
+              }, "icon-xxs fa-search-plus",{
+                "style": "h4 text-bold offset-top-10 text-white",
+                "desc": "Chenonceaux Castle"
+              },"thumbnail-bordered")
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3.isotope-item(data-filter="gallery 2")
+              +thumbnail-rayen({
+                "type": "thumbnail",
+                "thumb": {"src": "images/portfolio/portfolio-06-420x630.jpg", "width": 420, "height": 630, "alt": ""},
+                "target": {
+                  "src": "images/portfolio/portfolio-06-1170x780_original.jpg",
+                  "width": 1170,
+                  "height": 780,
+                  "alt": ""
+                }
+              }, "icon-xxs fa-search-plus",{
+                "style": "h4 text-bold offset-top-10 text-white",
+                "desc": "Port of Nice"
+              },"thumbnail-bordered")
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3.isotope-item(data-filter="gallery 1")
+              +thumbnail-rayen({
+                "type": "thumbnail",
+                "thumb": {"src": "images/portfolio/portfolio-07-420x300.jpg", "width": 420, "height": 300, "alt": ""},
+                "target": {
+                  "src": "images/portfolio/portfolio-07-1170x780_original.jpg",
+                  "width": 1170,
+                  "height": 780,
+                  "alt": ""
+                }
+              }, "icon-xxs fa-search-plus",{
+                "style": "h4 text-bold offset-top-10 text-white",
+                "desc": "Park Guell"
+              },"thumbnail-bordered")
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3.isotope-item(data-filter="gallery 2")
+              +thumbnail-rayen({
+                "type": "thumbnail",
+                "thumb": {"src": "images/portfolio/portfolio-08-420x630.jpg", "width": 420, "height": 630, "alt": ""},
+                "target": {
+                  "src": "images/portfolio/portfolio-08-1170x779_original.jpg",
+                  "width": 1170,
+                  "height": 779,
+                  "alt": ""
+                }
+              }, "icon-xxs fa-search-plus",{
+                "style": "h4 text-bold offset-top-10 text-white",
+                "desc": "Himalaya Mountains"
+              },"thumbnail-bordered")
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3.isotope-item(data-filter="gallery 1")
+              +thumbnail-rayen({
+                "type": "thumbnail",
+                "thumb": {"src": "images/portfolio/portfolio-05-420x300.jpg", "width": 420, "height": 300, "alt": ""},
+                "target": {
+                  "src": "images/portfolio/portfolio-05-1170x780_original.jpg",
+                  "width": 1170,
+                  "height": 780,
+                  "alt": ""
+                }
+              }, "icon-xxs fa-search-plus",{
+                "style": "h4 text-bold offset-top-10 text-white",
+                "desc": "Westminster Abbey"
+              },"thumbnail-bordered")
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3.isotope-item(data-filter="gallery 2")
+              +thumbnail-rayen({
+                "type": "thumbnail",
+                "thumb": {"src": "images/portfolio/portfolio-11-420x630.jpg", "width": 420, "height": 630, "alt": ""},
+                "target": {
+                  "src": "images/portfolio/portfolio-11-1170x780_original.jpg",
+                  "width": 1170,
+                  "height": 780,
+                  "alt": ""
+                }
+              }, "icon-xxs fa-search-plus",{
+                "style": "h4 text-bold offset-top-10 text-white",
+                "desc": "Paris"
+              },"thumbnail-bordered")
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3.isotope-item(data-filter="gallery 1")
+              +thumbnail-rayen({
+                "type": "thumbnail",
+                "thumb": {"src": "images/portfolio/portfolio-09-420x300.jpg", "width": 420, "height": 300, "alt": ""},
+                "target": {
+                  "src": "images/portfolio/portfolio-09-1170x780_original.jpg",
+                  "width": 1170,
+                  "height": 780,
+                  "alt": ""
+                }
+              }, "icon-xxs fa-search-plus",{
+                "style": "h4 text-bold offset-top-10 text-white",
+                "desc": "Nessebar"
+              },"thumbnail-bordered")
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3.isotope-item(data-filter="gallery 3")
+              +thumbnail-rayen({
+                "type": "thumbnail",
+                "thumb": {"src": "images/portfolio/portfolio-10-420x300.jpg", "width": 420, "height": 300, "alt": ""},
+                "target": {
+                  "src": "images/portfolio/portfolio-10-1170x780_original.jpg",
+                  "width": 1170,
+                  "height": 780,
+                  "alt": ""
+                }
+              }, "icon-xxs fa-search-plus",{
+                "style": "h4 text-bold offset-top-10 text-white",
+                "desc": "Colosseum in Rome"
+              },"thumbnail-bordered")
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3.isotope-item(data-filter="gallery 1")
+              +thumbnail-rayen({
+                "type": "thumbnail",
+                "thumb": {"src": "images/portfolio/portfolio-12-420x300.jpg", "width": 420, "height": 300, "alt": ""},
+                "target": {
+                  "src": "images/portfolio/portfolio-12-1170x780_original.jpg",
+                  "width": 1170,
+                  "height": 780,
+                  "alt": ""
+                }
+              }, "icon-xxs fa-search-plus",{
+                "style": "h4 text-bold offset-top-10 text-white",
+                "desc": "London"
+              },"thumbnail-bordered")
+
+    // Contacts
+    section.section-bottom-90.section-sm-bottom-0.section-hidden
+      .shell-wide
+        .range.range-xs-center.range-sm-left
+          .cell-xs-10.cell-sm-6.section-image-aside.section-image-aside-right.text-left
+            .section-image-aside-img.section-google-map-wrap(style="margin-left:0;")
+
+              // RD Google Map
+              .rd-google-map.element-fullheight(class="rd-google-map__model", data-zoom='15', data-y='40.643180', data-x='-73.9874068', data-styles='[{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]')
+                ul.map_locations
+                  li(data-y='40.643180', data-x='-73.9874068')
+                    p
+                      | 9870 St Vincent Place, Glasgow, DC 45 Fr 45.
+            .section-image-aside-body.section-sm-90.section-md-122.inset-sm-right-30.inset-lg-right-97.offset-top-63.offset-sm-top-0
+              div
+                h4.text-bold Get in Touch
+              div.offset-top-10
+                div.hr.bg-gray
+
+              .offset-top-20
+                // RD Mailform
+                form.rd-mailform.rd-mailform-validation-small.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+                  .range.range-xs-center
+                    .cell-sm-6
+                      .form-group.form-group-label-outside
+                        label.form-label.form-label-outside.text-dark(for="single-deal-first-name") First name
+                        input#single-deal-first-name.form-control(type="text" name="first-name" data-constraints="@Required")
+                      .form-group.form-group-label-outside.offset-top-20
+                        label.form-label.form-label-outside.text-dark(for="single-deal-email") E-mail
+                        input#single-deal-email.form-control(type="email" name="email" data-constraints="@Email @Required")
+                    .cell-sm-6.offset-top-20.offset-sm-top-0
+                      .form-group.form-group-label-outside
+                        label.form-label.form-label-outside.text-dark(for="single-deal-last-name") Last name
+                        input#single-deal-last-name.form-control(type="text" name="last-name" data-constraints="@Required")
+                      .form-group.form-group-label-outside.offset-top-20
+                        label.form-label.form-label-outside.text-dark(for="single-deal-phone") Phone
+                        input#single-deal-phone.form-control(type="text" name="last-name" data-constraints="@IsNumeric @Required")
+                  .form-group.form-group-label-outside.offset-top-20
+                    label.form-label.form-label-outside.text-dark(for="single-deal-message") Message
+                    textarea#single-deal-message.form-control(name="message" data-constraints="@Required" style="max-height: 150px;")
+                  .offset-top-18.offset-sm-top-30.text-center.text-sm-left
+                    button(type="submit").btn.btn-primary send
+
+
+
+  // Page Footer
+  include ../sections/_section-footer-minimal-dark
+  // coded by barber
+
+
+  // Modal
+  #modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+    .modal-dialog(role='document')
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') &times;
+          h4.modal-title.text-bold Contact Us
+        .modal-body
+          // Contact Info
+          address.contact-info.text-left
+            .left-block
+              .contact-item
+                a.unit.unit-horizontal.unit-spacing-xs(href='callto:#')
+                  span.unit-left
+                    span.icon.icon-xxs.icon-primary.icon-circle.mdi.mdi-phone
+                  span.unit-body
+                    span 1-800-1234-567
+              .contact-item
+                a.unit.unit-horizontal.unit-spacing-xs(href='mailto:#')
+                  span.unit-left
+                    span.icon.icon-xxs.icon-primary.icon-circle.mdi.mdi-email-outline
+                  span.unit-body
+                    span info@demolink.org
+            .right-block        
+              .contact-item
+                a.unit.unit-horizontal.unit-spacing-xs(href='#')
+                  span.unit-left
+                    span.icon.icon-xxs.icon-primary.icon-circle.mdi.mdi-map-marker
+                  span.unit-body
+                    span 2130 Fulton Street, San Diego, CA 94117-1080 USA
+          // RD Mailform
+          form.rd-mailform.text-left(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+            .form-group.form-group-label-outside
+              label.form-label.text-dark(for="single-deal-first-name1") Name
+              input#single-deal-first-name1.form-control(type="text" name="first-name" data-constraints="@Required")
+            .form-group.form-group-label-outside.offset-top-20
+              label.form-label.text-dark(for="single-deal-email1") E-mail
+              input#single-deal-email1.form-control(type="email" name="email" data-constraints="@Email @Required")
+            .form-group.form-group-label-outside.offset-top-20
+              label.form-label.text-dark(for="single-deal-phone1") Phone
+              input#single-deal-phone1.form-control(type="text" name="last-name" data-constraints="@IsNumeric @Required")
+            .form-group.form-group-label-outside.offset-top-20
+              label.form-label.text-dark(for="single-deal-message1") Message
+              textarea#single-deal-message1.form-control(name="message" data-constraints="@Required" style="max-height: 150px;")
+            .offset-top-18.offset-sm-top-30.text-center
+              button(type="submit").btn.btn-primary send

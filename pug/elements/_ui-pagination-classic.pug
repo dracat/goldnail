@@ -1,0 +1,24 @@
+//- Classic Pagination
+//- active - active index of pagination
+//- index - an array of {link} for indexes
+//- prev - prev button {link}
+//- next - next button {link}
+
+mixin pagination-classic(active, indexes, prev, next)
+  // Classic Pagination
+  nav
+    ul.pagination-classic
+      //- Previous
+      if prev
+        li
+          a(href=prev.href class = prev.icon)
+
+      //- Indexes
+      each index, i in indexes
+        li(class= i === active - 1 ? "active" : "")
+          a(href=index.href)= i + 1
+
+      //- Next
+      if next
+        li
+          a(href=next.href class = next.icon)
