@@ -216,7 +216,7 @@ header[role="header"] > hgroup{background-color:rgba(255,255,255,0.7); overflow:
 
 header[role="header"] > hgroup > h1{ padding:0; margin:0; display:inline-block; position:relative; z-index:5}
 
-header[role="header"] > hgroup > h1 > a{ background-color:#353535; text-transform:uppercase; font-family: 'Oranienbaum', serif;text-align:center; font-size:24px; line-height:52px;color:#FFF ;display:inline-block; width:157px; font-weight:500; letter-spacing:5px;  }
+header[role="header"] > hgroup > h1 > a{  text-transform:uppercase; font-family: 'Oranienbaum', serif;text-align:center; font-size:24px; line-height:52px;color:#FFF ;display:inline-block; padding:10px; font-weight:500; letter-spacing:5px;  }
 
 header[role="header"] > hgroup > h1 > a:hover{ text-decoration:none}
 

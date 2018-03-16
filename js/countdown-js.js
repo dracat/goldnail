@@ -1,5 +1,5 @@
 // set the date we're counting down to
-var target_date = new Date('Nov, 31, 2018').getTime();
+var target_date = new Date('Apr, 1, 2018').getTime();
  
 // variables for time units
 var days, hours, minutes, seconds;
@@ -25,6 +25,6 @@ setInterval(function () {
     seconds = parseInt(seconds_left % 60);
      
     // format countdown string + set tag value
-    countdown.innerHTML = '<div class="days"><h2>Left <span>' + days +  ' </span>Days</div> ';  
+    countdown.innerHTML = '<div class="days"><h2>осталось <span>' + days +  ' </span>дней</div> ';  
  
 }, 1000);
